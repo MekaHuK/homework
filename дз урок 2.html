@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Д/З урок 2</title>
+</head>
+<body>
+ 	<script>
+// Первая задача
+
+ 		var a = 1, b = 1, c, d;
+		c = ++a; alert('c = ++a = ' + c + ' — это потому, что сначала применяется инкремент, а уже потом присваивание'); // 2
+		d = b++; alert('d = b++ = ' + d + ' — это потому, что сначала применяется присваивание, а уже потом инкремент'); // 1
+		c = (2+ ++a); alert('c = (2+ ++a) = ' + c + ' — это потому, что сначала к а применяется инкремент, а уже потом сложение, при чем а = 2 в результате первой операции'); // 5
+		d = (2+ b++); alert('d = (2+ b++) = ' + d + ' — это потому, что сначала к b применяется сложение, а уже потом уже инкремент, при чем b = 2 в результате второй операции'); // 4
+		alert('a = ' + a + ' в результате предыдущих операций'); // 3
+		alert('b = ' + b + ' в результате предыдущих операций'); // 3
+
+// Вторая задача 
+
+		var a = 2;
+		var x = 1 + (a *= 2);
+		alert('x = 1 + (a *= 2) = ' + x + ' так как (а *= 2) = 4');
+
+// Третья задача 
+
+		var a = Math.round(prompt('Введите a'));
+		var b = Math.round(prompt('Введите b'));
+		if (a >= 0 && b >= 0) {
+			var c = a-b;
+			alert(' a - b =' + c);
+		}
+		else if (a <= 0 && b <= 0) {
+			var c = a*b;
+			alert(' a * b =' + c);
+		}
+		else {
+			var c = a+b;
+			alert(' a + b =' + c);
+		}
+
+// Четвертая задача (возможно в методичке опечатка - использовать swith в данной ситуации физически больно)
+
+		var a = Math.round(Math.random()*15);
+		alert('a = ' + a);
+		for (a=a;a<=15;a++){
+			alert("a = " + a);
+		}
+
+// Пятая задача 
+
+		var a = +prompt('Введите a');
+		var b = +prompt('Введите b');
+
+		function sum(l,m) {
+			var c=l+m;
+			return (c);
+		}
+		function diff(l,m) {
+			var c=l-m;
+			return (c);
+		}
+		function mult(l,m) {
+			var c=l*m;
+			return (c);
+		}
+		function divi(l,m) {
+			var c=l/m;
+			return (c);
+		}
+
+		alert('a + b = ' + sum(a,b));
+		alert('a - b = ' + diff(a,b));
+		alert('a * b = ' + mult(a,b));
+		alert('a / b = ' + divi(a,b));
+
+// Шестая задача
+	
+	var a = +prompt('Введите a');
+	var b = +prompt('Введите b');
+	var oper = prompt('Введите название операции (sum, diff, mult, divi)');
+
+
+	function mathOperation(arg1, arg2, operation){
+		switch (operation){
+			case 'sum': 
+				var k = sum(arg1,arg2);
+				return (k);
+				alert(k);
+				break;
+			case 'diff':
+				var k = diff(arg1,arg2);
+				return (k);
+				alert(k);
+				break;
+			case 'mult':
+				var k = mult(arg1,arg2);
+				return (k);
+				alert(k);
+				break;
+			case 'divi':
+				var k = divi(arg1,arg2);
+				return (k);
+				alert(k);
+				break;
+			default: 
+				alert("я не знаю таких операций");
+		}
+	}
+
+	alert(mathOperation(a,b,oper));
+
+// Седьмая задача 
+
+		var x = 0;
+ 		var y = null;
+		if (x > y) {
+			alert("x > y");
+		}
+		else if (x < y) {
+			alert("x < y");
+		}
+		else if (x == y) {
+			alert("x = y");
+		}
+		else {
+			alert('не могу сравнить, null это неопределенное значение, в том числе с неопределенным типом, а 0 - это число 0');
+		}
+
+// Восьмая задача
+		var a = +prompt('Введите число');
+		var b = +prompt('Введите степень');
+
+		function functionpower(val,pow) {
+			var m = val;
+			if (pow > 1) {
+				m *= functionpower(m,pow-1);
+				return (m);
+			}
+			else if (pow == 1) {
+				return (m);
+			}
+			else if (pow == 0) {
+				m = 1;
+				return (m);
+			}
+		}
+
+		alert(functionpower(a,b));
+
+
+ 	</script>	
+</body>
+</html>
