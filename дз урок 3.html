@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>дз урок 3</title>
+</head>
+<body>
+	<script>
+
+// Первая задача
+	
+	var simple = [2];
+	var i = 2;
+
+	while (i <= 100) { 
+		var k =2;
+			while (k < i) {
+				if ( i % k == 0) {
+					break;
+				}
+				else if (k == i-1) {
+					simple.push(i);
+					k++;
+				}
+				else {
+					k++;
+				}
+			}
+		i++;
+	}
+
+	alert(simple);
+
+// Вторая задача 
+
+	var n = 0;
+
+	do {
+		if (n == 0){
+			document.write(n + '– это ноль </br>');
+		}
+		else if (n % 2 == 0) {
+			document.write(n + '– это четное число </br>');
+		}
+		else {
+			document.write(n + '– это нечетное число </br>');
+		}
+		n++;
+	}
+	while (n <= 10);
+
+// Третья задача
+
+	for(n=0;n<=9; alert(n++))
+	{
+		
+	}
+
+// Четвертая задача
+	var x='x';
+	var y = '';
+	for (m = 0; m <= 20; m++) {
+	y += x;
+	console.log(y);
+	}
+
+	</script>
+	
+</body>
+</html>
